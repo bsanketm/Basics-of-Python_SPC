@@ -1,0 +1,1568 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Data Structures\n",
+    "There are four collection data types in the Python programming language\n",
+    "- Lists\n",
+    "- Tuples\n",
+    "- Sets\n",
+    "- Dictionaries"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Python Lists\n",
+    "A list is a collection which is ordered and changeable. \n",
+    "In Python lists are written with square brackets."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "b = 'ganesh'\n",
+    "c = 'Hrutwik'\n",
+    "a = [\"sanket\",'kiran']\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya', 'Kishor', 'Anu']\n",
+      "<class 'list'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "names = ['Raj', 'Arjun', 'Priya','Kishor','Anu']\n",
+    "print(names)\n",
+    "print(type(names))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya']\n",
+      "['Priya', 'Kishor', 'Anu']\n"
+     ]
+    }
+   ],
+   "source": [
+    "names\n",
+    "print(names[:3] )# for first 3 index values\n",
+    "print(names[2:]) # for from second index values onward"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Raj\n",
+      "['Priya', 'Kishor', 'Anu']\n",
+      "['Raj', 'Arjun']\n",
+      "['Arjun', 'Priya']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Access items\n",
+    "print(names[0])\n",
+    "print(names[2:])\n",
+    "print(names[:2])\n",
+    "print(names[1:3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Raj', 'Arjun', 'Priya', 'Kishor', 'Anu']"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "names"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Anu\n",
+      "['Kishor', 'Anu']\n",
+      "['Raj', 'Arjun', 'Priya']\n",
+      "['Priya', 'Kishor']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Negative index\n",
+    "print(names[-1])\n",
+    "print(names[-2:])\n",
+    "print(names[:-2])\n",
+    "print(names[-3:-1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya', 'Vijay', 'Anu']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Change item in list\n",
+    "names[3]=\"Vijay\"\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Raj5Raj\n",
+      "Arjun5Arjun\n",
+      "Priya5Priya\n",
+      "Vijay5Vijay\n",
+      "Anu5Anu\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Looping through lists\n",
+    "for j in names:\n",
+    "    print(j+'5'+j)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 3, ['a', 'b', [5, 6]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Nested list\n",
+    "mylist=[1,2,3,['a','b',[5,6]]]\n",
+    "print(mylist)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Methods \n",
+    "- append(): Adds an element at the end of the list\n",
+    "- clear(): Removes all the elements from the list\n",
+    "- copy(): Returns a copy of the list\n",
+    "- count(): Returns the number of elements with the specified value\n",
+    "- del : Delete list\n",
+    "- extend(): Add the elements of a list (or any iterable), to the end of the current list\n",
+    "- index(): Returns the index of the first element with the specified value\n",
+    "- insert():\tAdds an element at the specified position\n",
+    "- len(): Length of list\n",
+    "- list(): Copies list from given list\n",
+    "- pop(): Removes the element at the specified position\n",
+    "- remove():\tRemoves the item with the specified value\n",
+    "- reverse(): Reverses the order of the list\n",
+    "- sort(): Sorts the list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya', 'Vijay', 'Anu', 'Kumar']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# append(): Adds an element at the end of the list\n",
+    "names.append(\"Kumar\")\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# clear(): Removes all the elements from the list\n",
+    "names.clear()\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya', 'Kishor', 'Anu']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# copy(): Returns a copy of the list\n",
+    "names = ['Raj', 'Arjun', 'Priya','Kishor','Anu']\n",
+    "Names=names.copy()\n",
+    "print(Names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "# count(): Returns the number of elements with the specified value\n",
+    "names.append(\"Raj\")\n",
+    "x=names.count('Raj')\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'Names' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m/var/folders/2b/7j09kw1d0k9bgb6mny3b09h80000gp/T/ipykernel_2221/3952674022.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# del : Delete list\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;32mdel\u001b[0m \u001b[0mNames\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mNames\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'Names' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "# del : Delete list\n",
+    "del Names\n",
+    "print(Names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Priya', 'Kishor', 'Anu', 'Raj', 'Ford', 'BMW', 'Volvo']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# extend(): Add the elements of a list (or any iterable), \n",
+    "# to the end of the current list\n",
+    "cars = ['Ford', 'BMW', 'Volvo']\n",
+    "names.extend(cars)\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# index(): Returns the index of the first element with the specified value\n",
+    "x=names.index('BMW')\n",
+    "x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Audi', 'Priya', 'Kishor', 'Anu', 'Raj', 'Ford', 'BMW', 'Volvo']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# insert():\tAdds an element at the specified position\n",
+    "names.insert(2,'Audi')\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "# len(): Length of list\n",
+    "print(len(names))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Audi', 'BMW', 'Ford']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# list(): Creats list from given inputs\n",
+    "new_list=list(('Audi',\"BMW\",'Ford'))\n",
+    "print(new_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Raj', 'Arjun', 'Anu', 'Raj', 'Ford', 'BMW', 'Volvo']\n",
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "# pop(): Removes the element at the specified position\n",
+    "names.pop(2)\n",
+    "#print(names.pop(2))\n",
+    "print(names)\n",
+    "#names.pop(2)\n",
+    "#print(names)\n",
+    "print(len(names))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Arjun', 'Anu', 'Raj', 'Ford', 'BMW', 'Volvo']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# remove(): Removes the item with the specified value\n",
+    "names.remove('Raj')\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Volvo', 'BMW', 'Ford', 'Raj', 'Anu', 'Arjun']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# reverse(): Reverses the order of the list\n",
+    "names.reverse()\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Anu', 'Arjun', 'BMW', 'Ford', 'Raj', 'Volvo']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# sort(): Sorts the list\n",
+    "names.sort()\n",
+    "print(names)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Tuples\n",
+    "A tuple is a collection which is ordered and unchangeable. \n",
+    "\n",
+    "\n",
+    "In Python tuples are written with round brackets."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The key difference between the tuples and lists is that while the tuples are immutable objects the lists are mutable. \n",
+    "\n",
+    "This means that tuples cannot be changed while the lists can be modified.\n",
+    "Tuples are more memory efficient than the lists."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(1, 5, 8, 3, 10, 3) \n",
+      "\n",
+      "('Raj', 'Arjun', 'Priya', 'Kishor', 'Anu')\n"
+     ]
+    }
+   ],
+   "source": [
+    "t1=(1,5,8,3,10,3)\n",
+    "t2=('Raj', 'Arjun', 'Priya','Kishor','Anu')\n",
+    "print(t1,\"\\n\")\n",
+    "print(t2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Access elements\n",
+    "print(t1[0])\n",
+    "print(t1[2:])\n",
+    "print(t1[:3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Negative index\n",
+    "print(t1[-1])\n",
+    "print(t1[-4:])\n",
+    "print(t1[:-3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Change tuple values\n",
+    "t1[0]=99"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Tuples are not interchangable. So no additional element can be added or removed. Try..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Looping through tuple\n",
+    "for j in t1:\n",
+    "    print(j)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Check if 'Raj' in t2\n",
+    "if \"Raj\" in t2:\n",
+    "    print(\"Raj is listed in t2\")\n",
+    "print('Raj' in t1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# tuple with one item\n",
+    "T1=(\"Hi\",)\n",
+    "print(type(T1))\n",
+    "T2=(\"Hi\")\n",
+    "print(type(T2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Methods \n",
+    "- tuple(): Creates tuple with elements specified.\n",
+    "- len(): Gives length of tuple, no. of elements in tuple.\n",
+    "- t1 + t2 : Adds two tuples\n",
+    "- del(): Deletes tuple\n",
+    "- count(): Returns the number of times a specified value occurs in a tuple.\n",
+    "- index(): Searches the tuple for a specified value and returns the position of where it was found."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# tuple(): Creates tuple with elements specified.\n",
+    "t=tuple((0,2,4,6,0,2,2,5,2,0,2,3,4))\n",
+    "print(t)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# len(): Gives length of tuple, no. of elements in tuple.\n",
+    "len(t)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# t1 + t2 : Adds two tuples\n",
+    "t + t1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# del(): Deletes tuple\n",
+    "print(T1)\n",
+    "del T1\n",
+    "print(T1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# count(): Returns the number of times a specified value occurs in a tuple.\n",
+    "t.count(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# index(): Searches the tuple for a specified value and returns the position of where it was found.\n",
+    "t.index(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "t = (1,2,5,'a','b', (1,'c'))\n",
+    "print(t)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Sets\n",
+    "A set is a collection which is unordered and unindexed. \n",
+    "In Python sets are written with curly brackets."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 8, 9} \n",
+      "\n",
+      "{'D', 'X', 'C', 'A'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "set1={1,3,8,9,4,3,5,2,1}\n",
+    "print(set1,\"\\n\")\n",
+    "set2={'A','C','D','A','X'}\n",
+    "print(set2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Access items\n",
+    "# You cannot access items in a set by referring to an index, \n",
+    "# since sets are unordered the items has no index.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "8\n",
+      "9\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Access items\n",
+    "# loop through the set items using a for loop\n",
+    "for j in set1:\n",
+    "    print(j)\n",
+    "print('A' in set2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Methods\n",
+    "- add(): Adds an element to the set\n",
+    "- clear(): Removes all the elements from the set\n",
+    "- copy(): Returns a copy of the set\n",
+    "- difference(): Returns a set containing the difference between two or more sets\n",
+    "- difference_update(): Removes the items in this set that are also included in another, specified set\n",
+    "- discard(): Remove the specified item\n",
+    "- intersection(): Returns a set, that is the intersection of two other sets\n",
+    "- intersection_update(): Removes the items in this set that are not present in other, specified set(s)\n",
+    "- isdisjoint(): Returns whether two sets have a intersection or not\n",
+    "- issubset(): Returns whether another set contains this set or not\n",
+    "- issuperset(): Returns whether this set contains another set or not\n",
+    "- len(): Finds length of set\n",
+    "- pop(): Removes an element from the set\n",
+    "- remove(): Removes the specified element\n",
+    "- symmetric_difference(): Returns a set with the symmetric differences of two sets\n",
+    "- symmetric_difference_update(): inserts the symmetric differences from this set and another\n",
+    "- union(): Return a set containing the union of sets\n",
+    "- update(): Update the set with the union of this set and others"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 8, 9}\n",
+      "{1, 2, 3, 4, 5, 8, 9, 12}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# add(): Adds an element to the set\n",
+    "print(set1)\n",
+    "set1.add(12)\n",
+    "print(set1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "set()\n"
+     ]
+    }
+   ],
+   "source": [
+    "# clear(): Removes all the elements from the set\n",
+    "set1.clear()\n",
+    "print(set1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'D', 'X', 'C', 'A'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# copy(): Returns a copy of the set\n",
+    "set1=set2.copy()\n",
+    "print(set1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'mi'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# difference(): Returns a set containing the difference between two or more sets\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "z = y.difference(x)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'mi'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# difference_update(): Removes the items in this set that are also included in another, specified set\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "y.difference_update(x)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'D', 'X', 'C', 'A'}\n",
+      "{'D', 'C', 'A'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# discard(): Remove the specified item\n",
+    "print(set1)\n",
+    "set1.discard('X')\n",
+    "print(set1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'apple'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# intersection(): Returns a set, that is the intersection of two other sets\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "z = y.intersection(x)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'apple'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# intersection_update(): Removes the items in this set that are not present in other, specified set(s)\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "y.intersection_update(x)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "# isdisjoint(): Returns whether two sets have a intersection or not\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "z = x.isdisjoint(y)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "# issubset(): Returns whether another set contains this set or not\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}#,'banana','cherry'}\n",
+    "\n",
+    "z = y.issubset(x)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# issuperset(): Returns whether this set contains another set or not\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\",'banana','cherry'}\n",
+    "\n",
+    "z = y.issuperset(x)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# len(): Finds length of set\n",
+    "len(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'banana'}\n",
+      "banana\n",
+      "set()\n"
+     ]
+    }
+   ],
+   "source": [
+    "# pop(): Removes an element from the set and returns the removed value.\n",
+    "print(x)\n",
+    "print(x.pop())\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'apple', 'mi'}\n",
+      "{'samsung', 'apple'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# remove(): Removes the specified element\n",
+    "#y={'samsung', 'apple', 'mi'}\n",
+    "print(y)\n",
+    "y.remove('mi')\n",
+    "#y.remove('MI')\n",
+    "#y.discard('MI')\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'cherry', 'banana', 'mi'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# symmetric_difference(): Returns a set with the symmetric differences of two sets\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "z = y.symmetric_difference(x)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'cherry', 'samsung', 'banana', 'mi'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# symmetric_difference_update(): inserts the symmetric differences from this set and another\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "y.symmetric_difference_update(x)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'apple', 'banana', 'mi', 'cherry'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# union(): Return a set containing the union of sets\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "z=x.union(y)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'samsung', 'apple', 'banana', 'mi', 'cherry'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# update(): Update the set with the union of this set and others\n",
+    "x = {\"apple\", \"banana\", \"cherry\"}\n",
+    "y = {\"samsung\", \"mi\", \"apple\"}\n",
+    "\n",
+    "x.update(y)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Dictionary\n",
+    "A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Name': 'Ankit', 'Class': '12th', 'Roll No.': 25, 'Result': 'Pass'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "d1={\"Name\": \"Ankit\",\"Class\": '12th','Roll No.': 25, 'Result': \"Pass\"}\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'12th'"
+      ]
+     },
+     "execution_count": 50,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Accessing Items\n",
+    "# You can access the items of a dictionary by referring to its key name, inside square brackets.\n",
+    "d1['Class']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Ankit'"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# get() function\n",
+    "d1.get('Name')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Name': 'Aniket', 'Class': '12th', 'Roll No.': 25, 'Result': 'Pass'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Change values\n",
+    "d1['Name']='Aniket'\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Looping through dictionary\n",
+    "for j in d1:\n",
+    "    print(j)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for j in d1:\n",
+    "    print(d1[j])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict_keys(['Name', 'Class', 'Roll No.', 'Result'])"
+      ]
+     },
+     "execution_count": 53,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Extract keys\n",
+    "d1.keys()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict_values(['Aniket', '12th', 25, 'Pass'])"
+      ]
+     },
+     "execution_count": 54,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Extract values\n",
+    "d1.values()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Extract keys and values both\n",
+    "d1.items()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for k,v in d1.items():\n",
+    "    print(k,v)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False \n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Check existance of key\n",
+    "print('Names' in d1,'\\n')\n",
+    "if 'Names' in d1:\n",
+    "    print('Name exists in disctionary')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'child1': {'name': 'kruti', 'year': 2004}, 'child2': {'name': 'Akruti', 'year': 2007}, 'child3': {'name': 'Sanskruti', 'year': 2011}}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Nested dictionary\n",
+    "myfamily = {\n",
+    "  \"child1\" : {\n",
+    "    \"name\" : \"kruti\",\n",
+    "    \"year\" : 2004\n",
+    "  },\n",
+    "  \"child2\" : {\n",
+    "    \"name\" : \"Akruti\",\n",
+    "    \"year\" : 2007\n",
+    "  },\n",
+    "  \"child3\" : {\n",
+    "    \"name\" : \"Sanskruti\",\n",
+    "    \"year\" : 2011\n",
+    "  }\n",
+    "}\n",
+    "print(myfamily)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'child1': {'name': 'kruti', 'year': 2004}, 'child2': {'name': 'Akruti', 'year': 2007}, 'child3': {'name': 'Sanskruti', 'year': 2011}}\n"
+     ]
+    }
+   ],
+   "source": [
+    "child1 = { \"name\" : \"kruti\",\"year\" : 2004}\n",
+    "child2 = {\"name\" : \"Akruti\",\"year\" : 2007}\n",
+    "child3 = {\"name\" : \"Sanskruti\",\"year\" : 2011}\n",
+    "\n",
+    "myfamily = { \"child1\" : child1, \"child2\" : child2, \"child3\" : child3}\n",
+    "\n",
+    "print(myfamily)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Methods\n",
+    "- clear(): Removes all the elements from the dictionary\n",
+    "- copy(): Returns a copy of the dictionary\n",
+    "- fromkeys(): Returns a dictionary with the specified keys and values\n",
+    "- pop(): Removes the element with the specified key\n",
+    "- popitem(): Removes the last inserted key-value pair\n",
+    "- setdefault(): Returns the value of the specified key. If the key does not exist: insert the key, with the specified value\n",
+    "- update(): Updates the dictionary with the specified key-value pairs"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# clear(): Removes all the elements from the dictionary\n",
+    "print(d1)\n",
+    "d1.clear()\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy(): Returns a copy of the dictionary d2 = d1\n",
+    "d1={'Name': 'Ankit', 'Class': '12th', 'Roll No.': 25, 'Result': 'Pass'}\n",
+    "d3= d1\n",
+    "print(d3)\n",
+    "D=d1.copy()\n",
+    "print(D)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# fromkeys(): Returns a dictionary with the specified keys and values\n",
+    "x = ('key1', 'key2', 'key3')\n",
+    "y = 0\n",
+    "z=dict.fromkeys(x,y)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# pop(): Removes the element with the specified key\n",
+    "print(d1)\n",
+    "d1.pop('Name')\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# popitem(): Removes the last inserted key-value pair\n",
+    "print(d1)\n",
+    "d1.popitem()\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# setdefault(): Returns the value of the specified key. \n",
+    "# If the key does not exist: insert the key, with the specified value\n",
+    "d1={'Name': 'Ankit', 'Class': '12th', 'Roll No.': 25, 'Result': 'Pass'}\n",
+    "print(d1)\n",
+    "d2=d1.setdefault(\"Class\")\n",
+    "print(d2)\n",
+    "d3=d1.setdefault(\"Location\",'Pune')\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# update(): Updates the dictionary with the specified key-value pairs\n",
+    "print(d1)\n",
+    "d1.update({\"Division\":\"A\"})\n",
+    "print(d1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class1= [\"sanket\",\"ganesh\",\"raj\",\"anu\"]\n",
+    "tuple1=('Raj', 'Arjun', 'Priya','Kishor','Anu')\n",
+    "set1 = {\"sanket\",\"ganesj\",'hrutwik'}\n",
+    "dict1 = {\"sanket\":\"1\",\"ganesh\":\"2\",\"hrutwik\": \"3\"}\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
